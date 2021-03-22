@@ -1,0 +1,37 @@
+<hr class="mt-3">
+<div class="row justify-content-center mt-5">
+    <div class="input-group rounded">
+        <input type="search" class="form-control rounded" ng-model="name" ng-keyup="doKeyUp($event)" placeholder="Search by name" aria-label="Search"
+            aria-describedby="search-addon" />&nbsp;&nbsp;&nbsp;
+        <input type="search" class="form-control rounded" ng-model="hobbie" ng-keyup="doKeyUp($event)" placeholder="Search by hobbie" aria-label="Search"
+          aria-describedby="search-addon" />
+    </div>
+</div>
+<div class="row justify-content-center">
+  <div class="table-responsive mt-5">
+    <table class="table table-sm table-bordered table-light">
+      <thead class="text-center">
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Hobbie</th>
+          <th>At Created</th>
+          <th>Actions</th>
+      </thead>
+      <tbody class="text-center">
+          <tr ng-repeat="user in $ctrl.users | filter:name  | filter:hobbie">
+              <td>{{user.name}}</td>
+              <td>{{user.phone}}</td>
+              <td>{{user.age}}</td>
+              <td>{{user.gender}}</td>
+              <td>{{user.hobbie}}</td>
+              <td>{{user.at_created | date: format}}</td>
+              <td><button title="Delete" ng-click="$ctrl.delete(user._id, $index)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button></td>
+          </tr>
+          <tr><td colspan="7" ng-if="$ctrl.users.length < 1">Aún no hay usuarios registrados</td></tr>
+          <!-- <tr><td colspan="7" ng-if="result1.length === 0">Sin resultados</td></tr> -->
+      </tbody>
+    </table>
+  </div>     
+</div>
