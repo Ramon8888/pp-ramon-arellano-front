@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <h3 class="text-center mt-5">Users registration</h3>
+    <hr class="mt-3">
+    <form class="row g-3 needs-validation mt-3" ng-submit="$ctrl.sendData()">
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" ng-model="$ctrl.formData.name" placeholder="Your name" minlength="4" autocomplete="off" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Email</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="email" ng-model="$ctrl.formData.email" placeholder="Your email" autocomplete="off" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Phone</label>
+          <input type="text" class="form-control" id="phone" autocomplete="off" ng-model="$ctrl.formData.phone" placeholder="Your phone" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" ng-model="$ctrl.formData.password" placeholder="Your password" minlength="4" autocomplete="off" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        <div class="col-md-2">
+          <label for="validationCustom04" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" ng-model="$ctrl.formData.age" placeholder="Your age" maxlength="2" autocomplete="off" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">Gender</label>
+            <select class="form-select" id="gender" ng-model="$ctrl.formData.gender" required>
+                <option selected disabled value="">Choose...</option>
+                <option value="M">Man</option>
+                <option value="F">Woman</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a valid state.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom02" class="form-label">Hobbie</label>
+            <input type="text" class="form-control" id="hobbie" ng-model="$ctrl.formData.hobbie" autocomplete="off" placeholder="Your hobbie" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        <div class="col-12">
+          <button class="btn btn-dark" type="submit">Submit form</button>
+        </div>
+      </form>
+</div><br>
+<h4>{{$ctrl.users}}</h4>
